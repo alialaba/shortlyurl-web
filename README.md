@@ -1,1 +1,1 @@
-### URL shortening is a web technique in which a Uniform Resource Location (URL) can have a substantial reduction in length, providing a new unique URL that still directs to the specified web page. The general idea is to reduce long web addresses into a shorter format that is easier to remember, track, share in messages or use in print work.
+- URL shortening is a web technique in which a Uniform Resource Location (URL) can have a substantial reduction in length, providing a new unique URL that still directs to the specified web page. 
