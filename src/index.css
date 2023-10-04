@@ -1,3 +1,8 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,6 +23,34 @@
 
 body {
 
+}
+
+/* Default styles */
+.container{
+  width: min(1300px, 90%);
+  margin: 0 auto;
+
+}
+ul{
+  list-style: none;
+}
+img{
+  max-width: 100%;
+}
+
+/* Default styles */
+/**************************/
+/* HEADER */
+/**************************/
+.header{
+  padding: 2rem 0;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+.nav__list{
+  display: flex;
 }
 
 

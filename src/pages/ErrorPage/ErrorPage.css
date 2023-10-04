@@ -1,0 +1,5 @@
+.error{
+    text-align: center;
+    width: min(600px, 90%);
+    margin: 0 auto;
+}
