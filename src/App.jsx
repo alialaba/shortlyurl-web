@@ -8,12 +8,18 @@ import Navbar from './components/Navbar';
 
 function App() {
  
+  const [showNavBar, setShowNavBar] = useState(false);
+
+
+  function handleShowNavBar(){
+      setShowNavBar(!showNavBar)
+  }
 
   return (
    
      <Router>
       {/* <a href='/home'>Hello Home Page</a> */}
-      <Navbar/>
+      <Navbar handleShowNavBar={handleShowNavBar} showNavBar={showNavBar}/>
       <main>
       <Routes>
         <Route path='/' element={<Home/>}/>

@@ -1,42 +1,156 @@
-*, *::before, *::after{
-  margin: 0;
-  padding: 0;
+
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* color: #ffffff; */
+  /* background-color: #242424; */
+
+  --clr-primary-400:#5AFE73;
+  --clr-primary-300: #CDCDCD;
+
+  --clr-neutral-100:#fff;
+  --clr-neutral-900:#000000;
+
+  --ff-primary: 'Be Vietnam Pro', sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular:400;
+  --fw-semi-bold:500;
+  --fw-bold:700;
+
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fs-nav: var(--fs-500);
+  --fs-primary-heading: var(--fs-800);
+  --fs-body: var(--fs-400);
+  --fs-secondary-heading: var(--fs-700);
+  --fs-btn: var(--fs-300);
+
+}
+
+/*******************************/
+/* CSS RESETS */
+/******************************/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],ul {
+  list-style: none;
+}
 
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
 
+/* Set core root defaults */
+html,body{
+ height: 100%;
+}
+/* Set core body defaults */
 body {
-
+ 
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-body);
+  background-color: var(--clr-neutral-900);
+  
 }
 
-/* Default styles */
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/*******************************/
+/*END CSS RESETS */
+/******************************/
+
+
+/*******************************/
+/*UTILITY CLASSES */
+/******************************/
 .container{
   width: min(1300px, 90%);
   margin: 0 auto;
+}
+
+.fw-regular{
+  font-weight: var(--fw-regular);
+}
+
+.fw-semi-bold{
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold{
+  font-weight: var(--fw-bold);
+}
+.fs-primary-heading{
+  font-size: var(--fs-primary-heading);
 
 }
-ul{
-  list-style: none;
-}
-img{
-  max-width: 100%;
-}
+
+
+/*******************************/
+/*END UTILITY CLASSES */
+/******************************/
+
+
 
 /* Default styles */
 /**************************/
@@ -44,17 +158,108 @@ img{
 /**************************/
 .header{
   padding: 2rem 0;
+  /* position: relative; */
 }
 .nav{
+  position: relative;
   display: flex;
   justify-content: space-between;
+  /* flex-direction: column; */
+
 }
-.nav__list{
-  display: flex;
+.nav__icon{
+display: none;
+cursor: pointer;
 }
 
 
-@media (prefers-color-scheme: light) {
+.nav__item{
+  margin-right: 2em;
+}
+.nav__item:last-child{
+  margin-right: 0;
+}
+
+.nav__link{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.nav-menu{
+  font-size: 1.4rem;
+  color: var(--clr-primary-300);
+}
+
+/******************************/
+/* TAB ABOVE MEDIA QUERIES */
+/*****************************/
+@media(min-width:768px){
+
+  :root{
+
+  
+    --fs-nav: var(--fs-300);
+    --fs-body: var(--fs-500);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+  }
+    
+  
+  .nav{
+    flex-direction: row;
+  }
+
+  .nav__list{
+   display: flex;
+  }
+  .nav__link--btn{
+    padding: .8em 1.6em;
+    border: 1px solid var(--clr-neutral-100);
+    border-radius: 50px;
+
+  }
+  .nav__link--btn:hover{
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
+  }
+}
+
+/******************************/
+/* TAB BELOW MEDIA QUERIES */
+/*****************************/
+@media (max-width: 769px){
+
+
+  .nav__list{
+    position: absolute;
+    top: 60px;
+    /* height: calc(100vh - 60px); */
+    visibility: hidden;
+    background-color: var(--clr-primary-400);
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+   
+  }
+  .nav__list.active{
+    visibility: visible;
+    z-index: 1;
+    left: 0;
+    right: 0;
+  }
+  .nav__item{
+    margin-top: 2em;
+  }
+  .nav__link{
+    color: var(--clr-neutral-900);
+  }
+  
+  .nav__icon{
+    display: block;
+    }
+
+}
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -65,4 +270,4 @@ img{
   button {
     background-color: #f9f9f9;
   }
-}
+} */

@@ -1,20 +1,34 @@
-import React from "react";
+
+import React,{ useState} from "react";
 import { Link } from "react-router-dom";
-export default function (){
+import logo from "../assets/react.svg"
+export default function (props){
+
+    // const [showNavBar, setShowNavBar] = useState(false);
+
+
+    // function handleShowNavBar(){
+    //     setShowNavBar(!showNavBar)
+    // }
+
+
     return(
         <header className="header">
               <div className="container">
             <nav className="nav">
         
-                <div className="logo">
-                    <span><Link to="/">Shortlyurl</Link></span>
+                <div className="nav__logo">
+                    <Link to="/"className="nav__link" ><img src={logo} alt="logo"/></Link>
                 </div>
-                    <ul className="nav__list">
-                        {/* <li><Link to="/">Home</Link></li> */}
-                        <li> <Link to="/whyus">Why Us</Link></li>
-                        <li> <Link to="/blog">Blog</Link></li>
-                        <li> <Link to="/login">Login</Link></li>
-                        <li> <Link to="/signup">Sign up</Link></li>
+                <div className="nav__icon" onClick={()=> props.handleShowNavBar()}>
+                    {props.showNavBar ?  <i className="fa-solid fa-xmark nav-menu"></i> : <i className="fa-solid fa-bars nav-menu"></i>}
+                </div>
+                    <ul className={`${props.showNavBar && "active"} nav__list`}>
+                      
+                        <li className="nav__item"> <Link to="/whyus" className="nav__link">Why Us</Link></li>
+                        <li className="nav__item"> <Link to="/blog"  className="nav__link">Blog</Link></li>
+                        <li className="nav__item"> <Link to="/login" className="nav__link">Login</Link></li>
+                        <li className="nav__item"> <Link to="/signup" className="nav__link nav__link--btn"> <i className="fa-solid fa-link"></i> Get Started</Link></li>
 
                     </ul>
             </nav>
