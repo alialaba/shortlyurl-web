@@ -9,9 +9,16 @@ import Button from './components/Button';
 import Footer from './components/Footer';
 
 
+import featureData from "./utils/featureData";
+
+
 function App() {
  
   const [showNavBar, setShowNavBar] = useState(false);
+
+  const [featuresData, setFeaturesData] = useState(featureData);
+
+  console.log(featureData);
 
 
   function handleShowNavBar(){
@@ -25,7 +32,7 @@ function App() {
       <Navbar handleShowNavBar={handleShowNavBar} showNavBar={showNavBar}/>
       <main>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home featuresData={featuresData}/>}/>
         <Route path='/signup' element={<SignUp/>}/>
 
         <Route path='*' element={<ErrorPage/>}/>

@@ -102,3 +102,23 @@
 }
 
 
+/*****************************/
+/*FEATURES*/
+/****************************/
+
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features__content{
+    width: 35%;
+}
+.features__img{
+    width: 60%;
+    background-color: #333;
+    padding: 4em;
+    border-radius: 6px;
+}

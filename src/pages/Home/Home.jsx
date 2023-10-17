@@ -2,9 +2,11 @@ import React from "react";
 
 import "./Home.css";
 import InlineInputBtn from "../../components/InlineInputBtn";
-// import Hero from "../../components/Hero"; links
+import AccordionItem from "../../components/Accordion";
+import ftImg from "../../assets/tes.png"
 
-export default function Home(){
+export default function Home(props){
+    console.log(props.featuresData)
     return(<>
        <section className="section__hero">
             <div className="container">
@@ -23,6 +25,33 @@ export default function Home(){
                     <InlineInputBtn/>
                 </div>
             </div>
+        </section>
+
+        <section className="section__features">
+         <div className="container">
+            <h2>Get the most out of every link you share</h2>
+            <div className="features">
+                  
+                <article className="features__content">
+                    <h2 className="whyus__title">Why Us?</h2>
+                    <p>shortlyurl provides advanced features that let businesses get all the benefits of link shortening.</p>
+                
+                {props.featuresData.map(item=>(
+                   <AccordionItem key={item.id} item={item}/>
+                ))}
+                
+                </article>
+
+                <article className="features__img">
+                   <img src={ftImg} alt="feature imag"/>
+
+                </article>
+
+          
+
+            </div>
+
+         </div>
         </section>
         
     </>)

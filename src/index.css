@@ -120,7 +120,11 @@ select {
   }
 }
 
-
+button{
+  background: none;
+  border: none;
+  outline: none;
+}
 /*******************************/
 /*END CSS RESETS */
 /******************************/
@@ -205,6 +209,30 @@ margin-block-start: 1.5rem;
     background-color: var(--clr-primary-400);
     padding: 10px;
 
+}
+
+.accordion{
+  border: 1px solid var(--clr-primary-300);
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.accordion__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion__heading{
+  color: var(--clr-neutral-100);
+}
+.accordion__text{
+  color: var(--clr-primary-300);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+.accordion__btn{
+  color: var(--clr-primary-400);
+  font-size: 1.3rem;
 }
 
 /**************************/

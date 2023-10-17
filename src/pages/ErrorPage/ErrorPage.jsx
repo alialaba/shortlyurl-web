@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import error404 from "../../assets/err404.png"
+import error404 from "../../assets/error404.jpg"
 import  "./ErrorPage.css";
 export default function ErrorPage(){
 
