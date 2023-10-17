@@ -5,6 +5,9 @@ import SignUp from './pages/SignUp/SignUp';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Navbar from './components/Navbar';
 
+import Button from './components/Button';
+import Footer from './components/Footer';
+
 
 function App() {
  
@@ -29,9 +32,7 @@ function App() {
       </Routes>
       </main>
 
-      <footer>
-        Footer
-      </footer>
+      <Footer/>
      </Router>
    
   )
