@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import "./Home.css";
 import InlineInputBtn from "../../components/InlineInputBtn";
@@ -6,7 +6,14 @@ import AccordionItem from "../../components/Accordion";
 import ftImg from "../../assets/tes.png"
 
 export default function Home(props){
-    console.log(props.featuresData)
+
+    const [clicked, setClicked] = useState(0);
+
+    const handleToggle =(index)=>{
+      setClicked(index === clicked ? null : index)
+    }
+
+
     return(<>
        <section className="section__hero">
             <div className="container">
@@ -29,23 +36,29 @@ export default function Home(props){
 
         <section className="section__features">
          <div className="container">
-            <h2>Get the most out of every link you share</h2>
+            <h2 className="subtitle">Get the most out of every link you share</h2>
             <div className="features">
+
+            <article className="features__img">
+                   <img src={ftImg} alt="feature imag"/>
+
+            </article>
                   
                 <article className="features__content">
-                    <h2 className="whyus__title">Why Us?</h2>
+                    <h3 className="whyus__title">Why Us?</h3>
                     <p>shortlyurl provides advanced features that let businesses get all the benefits of link shortening.</p>
                 
-                {props.featuresData.map(item=>(
-                   <AccordionItem key={item.id} item={item}/>
+                {props.featuresData.map((item, index)=>(
+                   <AccordionItem
+                    key={item.id} item={item} 
+                    onToggle={()=> handleToggle(index)}
+                    active={clicked === index}
+                     />
                 ))}
                 
                 </article>
 
-                <article className="features__img">
-                   <img src={ftImg} alt="feature imag"/>
-
-                </article>
+                
 
           
 

@@ -159,8 +159,12 @@ margin-block-start: 1.5rem;
 
 .center{
     text-align: center;
-    padding: 100px 0;
+    /* padding: 100px 0; */
     margin: 0 auto;
+}
+
+section{
+  padding: 60px 0;
 }
 
 /*******************************/
@@ -212,10 +216,15 @@ margin-block-start: 1.5rem;
 }
 
 .accordion{
-  border: 1px solid var(--clr-primary-300);
+  border: 1px solid  var(--clr-primary-300);
   border-radius: 6px;
   padding: 1em;
   margin-bottom: 1em;
+}
+.accordion.active{
+  border: none;
+  background-color: #333;
+  padding: 1.5em;
 }
 .accordion__header{
   display: flex;
@@ -229,10 +238,17 @@ margin-block-start: 1.5rem;
   color: var(--clr-primary-300);
   font-size: .9rem;
   line-height: 1.6;
+  height: 0;
+  overflow: hidden;
+  /* transition: height .5s ease-in-out; */
+}
+.accordion__text.open{
+  height: auto;
 }
 .accordion__btn{
   color: var(--clr-primary-400);
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 /**************************/
@@ -320,6 +336,9 @@ cursor: pointer;
     color: var(--clr-neutral-900);
     /* transform: scale(1.9); */
     
+  }
+  section{
+    padding: 120px 0;
   }
 }
 

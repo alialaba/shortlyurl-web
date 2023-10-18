@@ -111,13 +111,35 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+@media (min-width: 768px){
+
+    .features__img{
+        /* position: absolute;
+        right: 0; */
+        transform: translateX(-20%);
+    }
+    .features__content{
+        width: 35%;
+        /* position: absolute;
+        right: 0; */
+    }
+    .features__img{
+        width: 62%;
+        
+    }
+
 }
 
 .features__content{
-    width: 35%;
+    /* width: 35%; */
+    /* position: absolute;
+    right: 0; */
 }
 .features__img{
-    width: 60%;
+    /* width: 60%; */
     background-color: #333;
     padding: 4em;
     border-radius: 6px;
