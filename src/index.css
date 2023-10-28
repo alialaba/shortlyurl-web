@@ -223,7 +223,7 @@ section{
 }
 .accordion.active{
   border: none;
-  background-color: #333;
+   background-color: rgba(100, 100, 100, 0.15);
   padding: 1.5em;
 }
 .accordion__header{
