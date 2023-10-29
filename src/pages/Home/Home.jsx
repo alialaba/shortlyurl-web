@@ -7,17 +7,20 @@ import AccordionItem from "../../components/Accordion";
 
 export default function Home(props){
 
-    const [clicked, setClicked] = useState(0);
+    //Track the active item.
+    const [activeItem, setActiveItem] = useState(0);
 
+    //Function to toggle the active item.
     const handleToggle =(index)=>{
-      setClicked(index === clicked ? null : index)
+        if(index === activeItem){
+         // Clicking on the open item should not close it.
+          return;
+        }
+        setActiveItem(index)
+        console.log(index)
     }
 
-    useEffect(() => {
-        // Add an effect to open the first item by default
-        setClicked(0);
-      }, []);
-
+    
 
     return(<>
        <section className="section__hero">
@@ -42,22 +45,24 @@ export default function Home(props){
         <section  className="section__stats">
             <div className="container">
                 <div className="stats stack">
-                   <h2 className="stats__title">One Stop. <br></br>Four<span> Possibilities.</span></h2>
+                    <div className="">
+                   <h4 className="stats__title">One Stop. <br></br>Four<span> Possibilities.</span></h4>
+                   </div>
                    <ul className="stats__row">
                     <li className="stats__col">
-                        <h3 className="stats__value">3M</h3>
+                        <h4 className="stats__value">3M</h4>
                         <span className="stats__caption">Active users</span>
                     </li>
                     <li className="stats__col">
-                        <h3 className="stats__value">30M</h3>
+                        <h4 className="stats__value">30M</h4>
                         <span className="stats__caption">Links & QR codes created</span>
                     </li>
                     <li className="stats__col">
-                        <h3 className="stats__value">4B</h3>
-                        <span className="stats__caption">Clicked & Scanned connections</span>
+                        <h4 className="stats__value">4B</h4>
+                        <span className="stats__caption">activeItem & Scanned connections</span>
                     </li>
                     <li className="stats__col">
-                        <h3 className="stats__value">100K</h3>
+                        <h4 className="stats__value">100K</h4>
                         <span className="stats__caption">App Integrations</span>
                     </li>
 
@@ -70,28 +75,28 @@ export default function Home(props){
 
         <section className="section__features">
          <div className="container">
-            <h2 className="subtitle">Get the most out of every link you share</h2>
+            <h2 className="subheading">Get the most out of every link you share</h2>
             
-            <div className="features">
+            <div className="features stack">
 
             <article className="features__img">
                  
                    {props.featuresData.map((item,index)=>(
-                    <img key={item.id} style={{display: clicked === index ? "block" : "none"}}  src={item.featureImg} alt="feature imag"/>
+                    <img key={item.id} style={{display: activeItem === index ? "block" : "none"}}  src={item.featureImg} alt="feature imag"/>
                     
                    ))}
 
             </article>
                    
-                 <article className="features__content">
-                    <h3 className="whyus__title">Why Us?</h3>
-                    <p>shortlyurl provides advanced features that let businesses get all the benefits of link shortening.</p>
+                 <article className="features__content stack">
+                    <h3 className="features__title">See what's inside</h3>
+                    <p className="features__text">shortlyurl provides advanced features that let businesses get all the benefits of link shortening.</p>
                 
                 {props.featuresData.map((item, index)=>(
                    <AccordionItem
                     key={item.id} item={item} 
                     onToggle={()=> handleToggle(index)}
-                    active={clicked === index}
+                    active={activeItem === index}
                      />
                 ))}
                 

@@ -166,6 +166,15 @@ margin-block-start: 1.5rem;
 section{
   padding: 60px 0;
 }
+.subheading{
+  font-size: 3.3rem;
+  text-align: center;
+  width: min(600px, 100%);
+  margin: 0 auto;
+  line-height: 1.4;
+  color: var(--clr-primary-300);
+  padding-bottom: 3rem;
+}
 
 /*******************************/
 /*END UTILITY CLASSES */
@@ -220,6 +229,7 @@ section{
   border-radius: 6px;
   padding: 1em;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 .accordion.active{
   border: none;
@@ -239,7 +249,7 @@ section{
   font-size: .9rem;
   line-height: 1.6;
   height: 0;
-  overflow: hidden;
+ 
   /* transition: height .5s ease-in-out; */
 }
 .accordion__text.open{

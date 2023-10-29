@@ -112,7 +112,14 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    color: var(--clr-primary-300);
 }
+
+.features__title{
+  font-size: 1.6rem;
+  color: var(--clr-primary-300);
+}
+
 
 @media (min-width: 768px){
 
@@ -158,9 +165,12 @@
   }
   .stats__title{
     font-size: 1.8rem;
+    text-align: left;
   }
+
   .stats__title span{
     color: var(--clr-primary-400);
+    text-align: left;
 }
 
   .stats__row{
