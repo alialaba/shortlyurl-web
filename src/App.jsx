@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 
 
 import featureData from "./utils/featureData";
+import faqData from "./utils/faqData";
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       <Navbar handleShowNavBar={handleShowNavBar} showNavBar={showNavBar}/>
       <main>
       <Routes>
-        <Route path='/' element={<Home featuresData={featuresData}/>}/>
+        <Route path='/' element={<Home featuresData={featuresData} faqData={faqData} />}/>
         <Route path='/signup' element={<SignUp/>}/>
 
         <Route path='*' element={<ErrorPage/>}/>

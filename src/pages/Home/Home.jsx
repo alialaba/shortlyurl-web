@@ -10,15 +10,24 @@ export default function Home(props){
     //Track the active item.
     const [activeItem, setActiveItem] = useState(0);
 
+    //Keep track of which FAQ item is open
+    const [openFAQ, setOpenFAQ] = useState(null);
+
     //Function to toggle the active item.
-    const handleToggle =(index)=>{
+    const handleToggle = (index)=>{
         if(index === activeItem){
          // Clicking on the open item should not close it.
           return;
         }
         setActiveItem(index)
-        console.log(index)
+        console.log(index);
     }
+
+    //Function to toggle faq for a specific FAQ item
+    const handleFaqToggle = (index)=>{
+          setOpenFAQ(openFAQ === index ? null : index )
+    }
+
 
     
 
@@ -105,6 +114,28 @@ export default function Home(props){
             </div>
 
          </div>
+        </section>
+
+        {/* FAQ SECTION */}
+        <section className="faq-section">
+            <div className="container">
+             
+              <div className="faq stack">
+              <h2 className="subheading">Frequently Asked Questions</h2>
+
+              {props.faqData.map((item, index)=>(
+                <AccordionItem 
+                key={item.id} item={item}
+                open={openFAQ === index}
+                onToggle={()=> handleFaqToggle(index)}
+                
+                />
+              ))}
+
+              </div>
+
+
+            </div>
         </section>
         
     </>)
