@@ -22,7 +22,7 @@ export default function Accordion(props){
                 {props.active &&
                 <div>
                   <p className={`accordion__text ${props.active ? "open" : ""}`}>{props.item.info}</p>
-                  <button style={{color: "#fff" , fontSize:".8rem", cursor: "pointer"}} onClick={()=> {navigate("/")}}>Read more</button>
+                  <button style={{color: "#fff" , fontSize:".8rem", cursor: "pointer"}} onClick={()=> {navigate(`/features`)}}>Read more</button>
                   
                   </div>}
 

@@ -50,7 +50,19 @@
     color:var(--clr-primary-300) ;
     line-height: 1.1;
 }
-
+.hero__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.hero__icon{
+    margin-right: .5em;
+    background: rgba(100, 100, 100, 0.15);
+    border-radius: 50%;
+    padding: .5em;
+    color: var(--clr-primary-400);
+}
 
 .slidingVertical{
     overflow: hidden;

@@ -1,7 +1,7 @@
 ## Landing page
 
 * Hero section  
-* call to action card
+* call to action card (done)
 * features section (1 feature left);
 * faq section (done)
 * footer section (done);

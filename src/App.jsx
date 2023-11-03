@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import SignUp from './pages/SignUp/SignUp';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Navbar from './components/Navbar';
+import Feature from "./pages/Features/Features"
 
 import Button from './components/Button';
 import Footer from './components/Footer';
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home featuresData={featuresData} faqData={faqData} />}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/features' element={<Feature/>}/>
 
         <Route path='*' element={<ErrorPage/>}/>
       </Routes>

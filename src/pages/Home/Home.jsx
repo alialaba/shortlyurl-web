@@ -48,6 +48,21 @@ export default function Home(props){
                     {/* </div> */}
                     <p className="hero__text">Shorten, personalize, and share fully branded short URLs.</p>
                     <InlineInputBtn/>
+                    <ul className="hero__list">
+                        <li className="hero__item">
+                        <span className="hero__icon">
+                        <i class="fa-solid fa-link"></i>
+                        </span>
+                            <span>Short Links</span>
+                        </li>
+                        <li className="hero__item">
+                         <span className="hero__icon">
+                         <i class="fa-solid fa-qrcode"></i>
+                        </span>
+                            <span>QR Codes</span>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </section>

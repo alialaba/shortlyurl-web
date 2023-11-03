@@ -273,6 +273,7 @@ section{
 }
 .card-cta__title{
   font-size: 2rem;
+  font-weight: 700;
 }
 .card-cta__btn{
   background-color: var(--clr-neutral-100);

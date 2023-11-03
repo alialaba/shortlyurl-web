@@ -25,7 +25,7 @@ export default function (props){
                 </div>
                     <ul className={`${props.showNavBar && "active"} nav__list`}>
                       
-                        <li className="nav__item"> <Link to="/whyus" className="nav__link">Features</Link></li>
+                        <li className="nav__item"> <Link to="/feature" className="nav__link">Features</Link></li>
                         <li className="nav__item"> <Link to="/blog"  className="nav__link">Blog</Link></li>
                         <li className="nav__item"> <Link to="/login" className="nav__link">Login</Link></li>
                         <li className="nav__item"> <Link to="/signup" className="nav__link btn"> <i className="fa-solid fa-link"></i> Get Started</Link></li>
