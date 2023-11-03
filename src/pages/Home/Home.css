@@ -58,9 +58,6 @@
 }
 .hero__icon{
     margin-right: .5em;
-    background: rgba(100, 100, 100, 0.15);
-    border-radius: 50%;
-    padding: .5em;
     color: var(--clr-primary-400);
 }
 
