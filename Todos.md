@@ -1,15 +1,14 @@
 ## Landing page
 
 * Hero section  
-* Stats section (done)
-* services section
-* features section 
-* call to action section
-* faq section
+* call to action card
+* features section (1 feature left);
+* faq section (done)
 * footer section (done);
+* Stats section (done)
 
 
-* Work on closing accordion only when you click on another accordion
+* Work on closing accordion only when you click on another accordion (done)
 * Work on redirect to a uniq page when an accordion is clicked 
 
 

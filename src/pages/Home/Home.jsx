@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import "./Home.css";
 import InlineInputBtn from "../../components/InlineInputBtn";
 import AccordionItem from "../../components/Accordion";
+import ActionCard from "../../components/ActionCard";
 // import ftImg from "../../assets/tes.png"
 
 export default function Home(props){
@@ -113,9 +114,16 @@ export default function Home(props){
 
             </div>
 
-         </div>
-        </section>
 
+                <ActionCard/>
+
+
+         </div>
+
+        </section>
+        
+
+ 
         {/* FAQ SECTION */}
         <section className="faq-section">
             <div className="container">
