@@ -4,6 +4,7 @@ import "./Home.css";
 import InlineInputBtn from "../../components/InlineInputBtn";
 import AccordionItem from "../../components/Accordion";
 import ActionCard from "../../components/ActionCard";
+import RotateWord from "../../components/RotateWord";
 // import ftImg from "../../assets/tes.png"
 
 export default function Home(props){
@@ -36,18 +37,11 @@ export default function Home(props){
        <section className="section__hero">
             <div className="container">
                 <div className="hero stack center">
-                    {/* <div className="hero__vertical"> */}
-                    <h1 className="hero__title">Shorten  with Ease.
-                    {/* <div className="slidingVertical">  
-                        <span>Ease.</span>
-                        <span>Minimal Effort.</span>
-                        <span>Simplicity.</span>
-                        <span>Smoothly.</span>
-                    </div> */}
-                    </h1>
-                    {/* </div> */}
+                   
+                    <h1 className="hero__title">Shorten <span >Links</span> with Ease.</h1>
+                   
                     <p className="hero__text">Shorten, personalize, and share fully branded short URLs.</p>
-                    <InlineInputBtn/>
+                    <div><InlineInputBtn/></div>
                     <ul className="hero__list">
                         <li className="hero__item">
                         <span className="hero__icon">
