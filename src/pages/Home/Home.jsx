@@ -4,7 +4,6 @@ import "./Home.css";
 import InlineInputBtn from "../../components/InlineInputBtn";
 import AccordionItem from "../../components/Accordion";
 import ActionCard from "../../components/ActionCard";
-import RotateWord from "../../components/RotateWord";
 // import ftImg from "../../assets/tes.png"
 
 export default function Home(props){
