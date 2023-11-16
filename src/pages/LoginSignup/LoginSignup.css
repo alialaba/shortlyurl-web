@@ -71,6 +71,9 @@
     width: 100%;
 }
 .form-col{
+  margin-bottom: 1em;
+}
+.form-input{
     display: flex;
     align-items: center;
     width: 100%;
@@ -78,9 +81,10 @@
     background: none;
     border-radius: 5px;
     border: 1px solid var(--clr-primary-400);
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
+    
 }
-.form-col input{
+.form-input input{
     width: 100%;
     padding: .7em 1.4em;
     background: none;
@@ -88,7 +92,11 @@
     border: none;
     color: var(--clr-primary-300);
 }
-.form-col i{
+.form-input i{
     margin: 0 -10px 0  20px;
     color:var(--clr-primary-300);
+}
+.form-col .error{
+    color: red;
+    font-size: .8rem;
 }
