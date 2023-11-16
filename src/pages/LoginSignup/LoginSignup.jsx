@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import "./LoginSignup.css";
+import Input from "../../components/Input/Input";
 export default function SignUp() {
   // let navigate = useNavigate();
   // control login/signup state changes
@@ -81,56 +82,9 @@ export default function SignUp() {
           </div>
 
           <form className="credential__form" onSubmit={handleSubmit} noValidate>
-            {action === "Login" ? (
-              <></>
-            ) : (
-              <div className="form-col">
-              <div className="form-input">
-                {/* <label htmlFor="fullname">Fullname</label> */}
-                <i className="fa-regular fa-user"></i>
-                <input
-                  type="text"
-                  name="fullname"
-                  id="fullname"
-                  placeholder="Fullname"
-                  value={formValues.fullname}
-                  onChange={handleChange}
-                />
-              </div>
-              {formErrors.fullname && <span className="error">{formErrors.fullname}</span>}
-              </div>
-            )}
-             <div className="form-col">
-            <div className="form-input">
-              {/* <label htmlFor="email">Email</label> */}
-              <i className="fa-regular fa-envelope"></i>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={formValues.email}
-                onChange={handleChange}
-                placeholder="Email"
-              />
-            </div>
-            {formErrors.email && <span className="error">{formErrors.email}</span>}
-            </div>
-            <div className="form-col">
-            <div className="form-input">
-              <i className="fa-solid fa-lock"></i>
-              {/* <label htmlFor="password">Password</label> */}
-              <input
-                type="text"
-                name="password"
-                id="password"
-                value={formValues.password}
-                onChange={handleChange}
-                placeholder="Password"
-              />
-              <i className="fa-regular fa-eye"></i>
-            </div>
-            {formErrors.password && <span className="error" >{formErrors.password}</span>}
-            </div>
+            {action === "Login" ? ( <></> ) : ( <Input/> )}
+            <Input/>
+            <Input/>
             <Button
               className="credential__btn credential__submit"
               text={`${action === "Login" ? "Login" : "Sign Up"}`}
