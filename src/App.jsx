@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router , Routes , Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
-import SignUp from './pages/LoginSignup/LoginSignup';
+import LoginSignup from './pages/LoginSignup/LoginSignup';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Navbar from './components/Navbar';
 import Feature from "./pages/Features/Features"
@@ -35,7 +35,7 @@ function App() {
       <main>
       <Routes>
         <Route path='/' element={<Home featuresData={featuresData} faqData={faqData} />}/>
-        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/signup' element={<LoginSignup/>}/>
         <Route path='/features' element={<Feature/>}/>
 
         <Route path='*' element={<ErrorPage/>}/>

@@ -1,61 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
+import { useFormik } from "formik";
+
 import "./LoginSignup.css";
+//components
 import Input from "../../components/Input/Input";
-export default function SignUp() {
-  // let navigate = useNavigate();
+import Button from "../../components/Button";
+//validation file
+import {
+  signupSchema,
+  loginSchema,
+} from "../../validations/loginSignup.validation";
+
+export default function loginSignup() {
   // control login/signup state changes
   const [action, setAction] = useState("Login");
 
-  const initialValues = { fullname: "", email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const initialValues = { fullname: "", email: "", password: "" };
+  const [loginDetails, setLoginDetails] = useState([]);
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmitting) {
-      submitForm();
-    }
-  }, [formErrors]);
-  const submitForm = () => {
-    console.log(formValues);
-  };
+  // Formik logic and validations for Signup
+  const signupFormik = useFormik({
+    initialValues: {
+      fullname: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: signupSchema,
+    onSubmit: (values) => {
+      // Handle login logic
+      setLoginDetails([...loginDetails, values])
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
+      // Implement your Signup logic here
+    },
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmitting(true);
-  };
+  // Formik logic and validations for Login
 
-  const validate = (values) => {
-    let errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const loginFormik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: loginSchema,
+    onSubmit: (values) => {
+      // Handle login logic
+      console.log("Login", values);
 
-
-     if(!values.fullname){
-      errors.fullname ="Input cannot be blank";
-     }
-
-    if (!values.email) {
-      errors.email = "Input cannot be blank";
-    } else if (!regex.test(values.email)) {
-      errors.email = "Invalid email format";
-    }
-
-    if (!values.password) {
-      errors.password = "Input cannot be blank";
-    } else if (values.password.length < 5) {
-      errors.password = "Password must be more than 5 characters";
-    }
-
-    return errors;
-  };
+      // Implement your login logic here
+    },
+  });
 
   return (
     <section>
@@ -81,15 +75,78 @@ export default function SignUp() {
             />
           </div>
 
-          <form className="credential__form" onSubmit={handleSubmit} noValidate>
-            {action === "Login" ? ( <></> ) : ( <Input/> )}
-            <Input/>
-            <Input/>
-            <Button
-              className="credential__btn credential__submit"
-              text={`${action === "Login" ? "Login" : "Sign Up"}`}
-            />
-          </form>
+          {action === "Login" ? (
+            <form
+              className="credential__form"
+              onSubmit={loginFormik.handleSubmit}
+              noValidate
+            >
+              
+              <Input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="email"
+                value={loginFormik.values.email}
+                onChange={loginFormik.handleChange}
+                error={loginFormik.errors.email}
+              />
+              <Input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                value={loginFormik.values.password}
+                onChange={loginFormik.handleChange}
+                error={loginFormik.errors.password}
+              />
+              <Button
+                type="submit"
+                className="credential__btn credential__submit"
+                text="Login"
+              />
+            </form>
+          ) : (
+            <form
+              className="credential__form"
+              onSubmit={signupFormik.handleSubmit}
+              noValidate
+            >
+              <Input
+                type="text"
+                placeholder="Fullname"
+                id="fullname"
+                name="fullname"
+                value={signupFormik.values.fullname}
+                onChange={signupFormik.handleChange}
+                error={signupFormik.errors.fullname}
+              />
+
+              <Input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="email"
+                value={signupFormik.values.email}
+                onChange={signupFormik.handleChange}
+                error={signupFormik.errors.email}
+              />
+              <Input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                value={signupFormik.values.password}
+                onChange={signupFormik.handleChange}
+                error={signupFormik.errors.password}
+              />
+              <Button
+                type="submit"
+                className="credential__btn credential__submit"
+                text="Signup"
+              />
+            </form>
+          )}
         </div>
       </div>
     </section>
